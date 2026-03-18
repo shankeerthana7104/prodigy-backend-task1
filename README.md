@@ -1,38 +1,60 @@
-# Prodigy Infotech Backend Internship - Task 1
+# Prodigy Infotech Backend Internship
 
-## Basic REST API using Node.js and Express
+## 📌 Task 1: Basic REST API
 
 This project implements a simple REST API that performs CRUD operations for managing users.
 
-## Technologies Used
+### 🔧 Technologies Used
 - Node.js
 - Express.js
 - UUID
-- Postman (for testing)
+- Postman
 
-## API Endpoints
+### 📬 API Endpoints
+- POST /users → Create user
+- GET /users → Get all users
+- GET /users/:id → Get single user
+- PUT /users/:id → Update user
+- DELETE /users/:id → Delete user
 
-### Create User
-POST /users
+---
 
-### Get All Users
-GET /users
+## 📌 Task 2: Persistent Storage with Database Integration
 
-### Get Single User
-GET /users/:id
+Extended the REST API to use MongoDB for persistent storage.
 
-### Update User
-PUT /users/:id
+### 🚀 Features
+- MongoDB database integration
+- Mongoose ODM used for schema modeling
+- Environment variables using dotenv
+- CRUD operations with database
+- Tested using Postman
 
-### Delete User
-DELETE /users/:id
+### 🛠️ Technologies Used
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- dotenv
 
-## How to Run
+### 📂 Project Structure
+config/
+models/
+routes/
+server.js
+.env
 
-1. Install dependencies
-npm install
+### 📬 API Endpoints
+- POST /api/users → Create user
+- GET /api/users → Get all users
+- GET /api/users/:id → Get single user
+- PUT /api/users/:id → Update user
+- DELETE /api/users/:id → Delete user
 
-2. Run the server
-node server.js
+---
 
-3. Test APIs using Postman
+## ▶️ How to Run
+
+1. Install dependencies  
+2. start server 
+3. test the API using postman
