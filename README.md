@@ -57,4 +57,13 @@ server.js
 
 1. Install dependencies  
 2. start server 
-3. test the API using postman
+3. test the API using 
+
+
+## Task 3 - Authentication & Authorization
+
+- Implemented JWT-based authentication
+- Added user registration & login
+- Used bcrypt for password hashing
+- Protected routes using middleware
+- Role-based access control (Admin/User)
