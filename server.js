@@ -1,6 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+// Import Redis
+const redisClient = require("./config/redis");
 
 // Load environment variables
 dotenv.config();
