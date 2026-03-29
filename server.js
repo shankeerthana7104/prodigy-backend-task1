@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 // Import Redis
-const redisClient = require("./config/redis");
+//const redisClient = require("./config/redis");
 
 // Load environment variables
 dotenv.config();
@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 
 // Connect to database
-connectDB();
+require("./config/db");
 
 // Import routes
 const userRoutes = require("./routes/userRoutes");
@@ -35,3 +35,11 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+const roomRoutes = require("./routes/roomRoutes");
+
+app.use("/api/rooms", roomRoutes);
+
+const bookingRoutes = require("./routes/bookingRoutes");
+
+app.use("/api/bookings", bookingRoutes);

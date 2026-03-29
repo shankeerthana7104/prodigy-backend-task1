@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const User = require("../models/User");
-const redisClient = require("../config/redis");
+//const redisClient = require("../config/redis");
 
 // CREATE USER
 router.post("/", async (req, res) => {
@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
     const user = await User.create(req.body);
 
     // ❌ Clear cache
-    await redisClient.del("users");
+    // await redisClient.del("users");
 
     res.json(user);
   } catch (err) {
@@ -33,7 +33,7 @@ router.get("/", async (req, res) => {
     const users = await User.find();
 
     // Save to Redis (expire in 60 sec)
-    await redisClient.setEx("users", 60, JSON.stringify(users));
+    // await redisClient.setEx("users", 60, JSON.stringify(users));
 
     console.log("🐢 Data from MongoDB");
     res.json(users);
@@ -63,7 +63,7 @@ router.put("/:id", async (req, res) => {
     );
 
     // ❌ Clear cache
-    await redisClient.del("users");
+    // await redisClient.del("users");
 
     res.json(user);
   } catch (err) {
@@ -77,7 +77,7 @@ router.delete("/:id", async (req, res) => {
     await User.findByIdAndDelete(req.params.id);
 
     // ❌ Clear cache
-    await redisClient.del("users");
+    // await redisClient.del("users");
 
     res.json({ message: "User deleted" });
   } catch (err) {
